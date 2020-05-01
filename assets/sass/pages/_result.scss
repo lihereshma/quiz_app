@@ -1,0 +1,10 @@
+.end-page {  
+  text-align: center; 
+
+  .username, .userpoints, .usertime {
+    margin: 15px;
+    color: $white;
+    font-size: $twenty;
+    text-align: center;  
+  }
+}

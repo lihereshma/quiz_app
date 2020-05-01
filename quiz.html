@@ -1,0 +1,65 @@
+<!doctype html>
+
+<!-- If multi-language site, reconsider usage of html lang declaration here. -->
+<html lang="en"> 
+
+<head>
+  <meta charset="utf-8">
+  <title>Quiz | Quiz App</title>
+  <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <!--font-awesome link for icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
+  <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+</head>
+
+<body>
+  <!--container start-->
+  <div class="container">
+    <!--main section start-->
+    <main>
+      <div class="wrapper">
+        <div class="quiz-page">
+          <!-- quiz heder start -->
+          <div class="quiz-header">
+            <div class="quiz-user">
+              <span class="name">user name</span>
+            </div>
+            <!-- quiz timer -->
+            <div class="quiz-timer">
+              <span class="time">00:00</span>
+            </div>
+          </div>
+          <!-- quiz heder end -->
+          <!-- quiz body start -->
+          <div class="quiz-body">
+            <!-- questions and options -->
+            <div id="questions">questions</div>
+            <!-- quiz control buttons start-->
+            <div class="quiz-buttons">
+              <div>
+                <input type="button" class="btn-prev" value="Previous">
+              </div>
+              <div>
+                <input type="button" class="btn-next" value="Next">
+              </div>
+              <div>
+                <input type="button" class="btn-sub" value="Submit">
+              </div>              
+            </div> 
+            <!-- quiz control buttons end-->           
+          </div>
+          <!-- quiz body end -->
+        </div>
+      </div>
+    </main>
+    <!--main section end-->
+  </div>
+  <!--container end-->
+<script src="assets/js/quiz.js"></script>
+<script src="assets/js/time.js"></script>
+<script src="assets/js/data.js"></script>
+</body>
+</html>

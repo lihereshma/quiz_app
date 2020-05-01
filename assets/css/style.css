@@ -1,13 +1,3 @@
-@charset "utf-8";
-/* ==========================================================================
-   1. CSS Reset Code
-   ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-   ========================================================================== */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
@@ -30,11 +20,14 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
-
-input[type='radio'] { vertical-align: text-bottom; }
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
@@ -50,7 +43,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -66,11 +61,13 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -.7em;
+}
 
-/* 1.2. Clear Fix
-   ========================== */
+sub {
+  bottom: -.25em;
+}
 
 .cf:before,
 .cf:after {
@@ -78,18 +75,27 @@ sub { bottom: -.25em; }
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-decoration: none;
 }
 
 li {
@@ -100,55 +106,216 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 65.5%;
   margin: 0 auto;
 }
-/*=================================
-  Header styling starts here
-=================================*/
 
+.welcome-page, .quiz-page, .end-page {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-transform: capitalize;
+}
 
+h1 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
 
+h3 {
+  margin-bottom: 25px;
+  font: bold 20px "Arial";
+  text-transform: capitalize;
+}
 
+.quiz-page input[type="button"], .end-page input[type="button"] {
+  border: none;
+  border-radius: 27px;
+  padding: 10px 15px;
+  background-color: #142850;
+  color: #fff;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 
+.btn-prev {
+  display: none;
+}
 
-/*=================================
-  Header styling ends here
-=================================*/  
+.btn-prev, .btn-next {
+  margin-right: 10px;
+}
 
-/*=================================
-  main styling starts here
-=================================*/
+.disable {
+  display: none;
+}
 
+.enable {
+  display: inline-block;
+}
 
+body {
+  background-color: #142850;
+}
 
+.welcome-form input {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  outline: none;
+}
 
+.welcome-form input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
 
+.welcome-form input[type="button"] {
+  padding: 20px 0;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  font-size: 20px;
+  -webkit-transition: all 0.5s all;
+  transition: all 0.5s all;
+}
 
+@media screen and (min-width: 1024px) {
+  .welcome-form input[type="button"]:hover {
+    background-color: #fff;
+    color: #142850;
+  }
+}
 
+.quiz-page {
+  width: 50%;
+  border-radius: 2px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+}
 
-/*=================================
-  main styling ends here
-=================================*/
+.quiz-page .quiz-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
 
-/*=================================
-  footer styling starts here
-=================================*/ 
+.quiz-page .quiz-header .quiz-user {
+  padding-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
+.quiz-page .quiz-header .quiz-timer {
+  padding: 15px 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #142850;
+  color: #fff;
+}
 
+.quiz-page .quiz-body {
+  padding: 30px;
+  background-color: #ecf0f1;
+}
 
+.quiz-page .quiz-body .option-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  list-style-type: none;
+  margin: 30px 0;
+}
 
+.quiz-page .quiz-body .option-group .option {
+  width: 50%;
+  padding: 15px 0% 15px 3%;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  margin-bottom: 20px;
+  display: block;
+  outline: none;
+  background-color: #fff;
+  text-transform: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 
+.quiz-page .quiz-body .option-group .option.active {
+  border: 2px solid #142850;
+  color: #142850;
+}
 
+@media screen and (min-width: 1024px) {
+  .quiz-page .quiz-body .option-group .option:hover {
+    border: 2px solid #142850;
+    color: #142850;
+    cursor: pointer;
+  }
+}
 
- /*=================================
-  footer styling ends here
-=================================*/ 
+.quiz-page .quiz-body .quiz-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
 
-/*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+@media screen and (min-width: 1024px) {
+  .quiz-page .quiz-body .quiz-buttons input[type="button"]:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #142850;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  }
+}
 
+.end-page {
+  text-align: center;
+}
 
-
-}  
+.end-page .username, .end-page .userpoints, .end-page .usertime {
+  margin: 15px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

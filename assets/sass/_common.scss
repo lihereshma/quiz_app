@@ -1,0 +1,67 @@
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  cursor: pointer;
+  @include vendor(transition, all .5s ease);
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 65.5%; 
+  margin: 0 auto;
+}
+
+.welcome-page, .quiz-page, .end-page {
+  @include position(absolute, 0, 50%, auto, auto, 50%);
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: $white;
+  font-size: $thirty;
+  text-align: center;
+}
+
+h3 {
+  margin-bottom: 25px;
+  font: bold $twenty 'Arial';
+  text-transform: capitalize;
+}
+
+.quiz-page input[type="button"], .end-page input[type="button"] {
+  border: none;
+  border-radius: 27px;
+  padding: 10px 15px;
+  background-color: $blue;
+  color: $white; 
+  outline: none;
+  @include vendor(transition, all .5s ease);
+}
+
+.btn-prev { display: none; }
+.btn-prev, .btn-next {  margin-right: 10px; }
+.disable { display: none; }
+.enable { display: inline-block; }

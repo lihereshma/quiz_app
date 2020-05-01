@@ -1,0 +1,115 @@
+@mixin vendor($property, $content) {
+	-webkit-#{$property}: $content;
+	-moz-#{$property}: $content;
+	-ms-#{$property}: $content;
+	-o-#{$property}: $content;
+	#{$property}: $content;
+}
+
+@mixin background($url, $repeat, $position, $size) {
+	background: url($url) $repeat $position/$size;
+}
+
+@mixin position($position, $zIndex, $top, $right, $bottom, $left) {
+	position: $position;
+	z-index: $zIndex;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin justify-content($value) {
+	@if($value=='space-between') {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
+	@else if($value=='center') {
+		-webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+	}
+	@else if($value=='flex-end') {
+		-webkit-box-pack: end;
+    -ms-flex-pack: end;
+		justify-content: flex-end;
+	}
+}
+
+// Custom responsive mixin
+@mixin responsive($width) {
+	@media screen and (max-width: $width + "px") {
+		@content;
+	}
+}
+
+@mixin responsive-min($width) {
+	@media screen and (min-width: $width + "px") {
+		@content;
+	}
+}
+
+@mixin breakpoint($device) {
+	@if($device=='notebook') {
+		@media screen and (max-width: $notebook) {
+			@content;
+		}
+	}
+	@else if($device=='ipad') {
+		@media screen and (max-width: $ipad) {
+			@content;
+		}
+	}
+	@else if($device=='phone') {
+		@media screen and (max-width: $phone) {
+			@content;
+		}
+	}
+	@else if($device=='iphone') {
+		@media screen and (max-width: $iphone) {
+			@content;
+		}
+	}
+	@if($device=='small-iphone') {
+		@media screen and (max-width: $small-iphone) {
+			@content;
+		}
+	}
+}
+
+@mixin reverse-breakpoint($device) {
+@if($device=='notebook') {
+		@media screen and (min-width: $notebook) {
+			@content;
+		}
+	}
+	@else if($device=='ipad') {
+		@media screen and (min-width: $ipad) {
+			@content;
+		}
+	}
+	@else if($device=='phone') {
+		@media screen and (min-width: $phone) {
+			@content;
+		}
+	}
+	@else if($device=='iphone') {
+		@media screen and (min-width: $iphone) {
+			@content;
+		}
+	}
+}
